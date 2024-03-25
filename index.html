@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Validação Dos Campos</h1>
+        <h3>Insira os dados requeridos</h3>
+
+        <form id="main-form">
+            <input type="number" id="number-a" required placeholder="Insira o primeiro valor"/>
+            <input type="number" id="number-b" required placeholder="Insira o segundo valor"/>
+            <button id="check-button" type="submit">Enviar</button> 
+        </form>
+        <p id="confirmation-message"></p>
+    </div>
+    <script src="./main.js"></script> 
+</body>
+</html>
