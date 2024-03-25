@@ -3,27 +3,36 @@ const valor1 = document.getElementById('number-a');
 const valor2 = document.getElementById('number-b');
 let formevalido = false;
 
-function maiorque(um, dois) {
-    if (dois.value > um.value) {
-        return true;
-    } else {
-        return false;
+
+
+function maiorque(num1, num2) 
+    {
+    return num2 >num1
     }
-}
+        form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.querySelector('#error-message').style.display = 'none'
+        document.querySelector('#confirmation-message').style.display = 'none'
+        valor2.style.border= ' 1px solid grey';
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const mensagemdesuccesso = `O valor ${valor2.value} é maior que ${valor1.value}. Sucesso!`;
+            formevalido = maiorque(valor1.value, valor2.value);
+            if (formevalido)
+            {
 
-    formevalido = maiorque(valor1.value, valor2.value);
-    const innermensagemdesucesso = document.querySelector('.confirmation-message');
+                const mensagemdesuccesso = `O valor ${valor2.value} é maior que ${valor1.value}. Sucesso!`;
+                const containersucesso= document.querySelector('#confirmation-message');
+                containersucesso.style.display ='block';
+                containersucesso.innerHTML= mensagemdesuccesso;
+    
+                valor1.value=" ";
+                valor2.value=" ";
 
+            }
+            else{
+            valor2.style.border= '1px solid red';
+            document.querySelector('#error-message').style.display = 'block'
+            valor1.value=" ";
+            valor2.value=" ";
 
-    if (formevalido) {
-        innermensagemdesucesso.innerHTML = mensagemdesuccesso;
-        innermensagemdesucesso.style.display = 'block';
-    } else {
-        innermensagemdesucesso.innerHTML = 'na deu neguin'; // Limpar a mensagem se não for válido
-        innermensagemdesucesso.style.display = 'block';
-    }
+                }
 });
